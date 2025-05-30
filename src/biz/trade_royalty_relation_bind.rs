@@ -62,12 +62,6 @@ impl TradeRoyaltyRelationBindBiz {
     pub fn set_out_request_no(&mut self, out_request_no: String) {
         self.set("out_request_no", out_request_no.into());
     }
-    pub fn set_trade_no(&mut self, trade_no: String) {
-        self.set("trade_no", trade_no.into());
-    }
-    pub fn set_biz_type(&mut self, biz_type: String) {
-        self.set("biz_type", biz_type.into());
-    }
     pub fn set_royalty_parameters(&mut self, receiver_list: Vec<AccountInfo>) {
         self.set("receiver_list", JsonV::Array(receiver_list.iter().map(|receiver| receiver.clone().into_map()).collect::<Vec<JsonV<String>>>()));
     }
