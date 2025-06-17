@@ -120,7 +120,7 @@ pub fn load_private_key(private_key_str: &str) -> AliPayResult<RsaPrivateKey> {
         Ok(private_key)
     } else {
         Err(AliPayError(
-            "RsaPrivateKey from_pkcs1_pem failed".to_string(),
+            format!("RsaPrivateKey from_pkcs1_pem failed\nprivate key:{private_key_str}"),
         ))
     }
 }
@@ -132,7 +132,7 @@ pub fn load_public_key(public_key_str: &str) -> AliPayResult<RsaPublicKey> {
         Ok(public_key)
     } else {
         Err(AliPayError(
-            "RsaPublicKey from_public_key_pem failed".to_string(),
+            format!("RsaPublicKey from_public_key_pem failed\npublic key:{public_key_str}"),
         ))
     }
 }
